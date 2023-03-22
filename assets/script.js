@@ -36,3 +36,10 @@ function showMsg2() {
 }
 
 arrowRight.addEventListener("click", showMsg2);
+
+// Boucle pour compter le nombre d'element du tableau slides
+
+slides[0, 1, 2, 3];
+for (var i = 0; i < slides.length; i++) {
+  console.log(slides[i]);
+}
