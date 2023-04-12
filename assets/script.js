@@ -22,31 +22,46 @@ const slides = [
 ]
 // Etape 1 création variable compteur
 
-let compteur = 0
+let compteur = 0;
 
-// Etape 2 : Ajout event listener fleche gauche
+// Etape 2 : Ajout d'un event listener fleche gauche
 
 const arrowLeft = document.querySelector(".arrow_left");
 
 arrowLeft.addEventListener("click", prev);
 
 function prev() {
-	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides.length;[compteur -1].image;
-	document.querySelector(".banner-desc").innerHTML=slides[compteur -1].tagLine;
+	compteur=compteur-1; // Etape 4 : retour en arrière grace au -1 au clic
+
+	if (compteur<0){ // Etape 5 : condition qui permet le défilement infini
+		compteur=3;
 	}
 
+	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides[compteur].image; // permet de changer l'image
+	document.querySelector(".banner-desc").innerHTML=slides[compteur].tagLine; // permet de changer le texte 
+	document.querySelector(".dot_selected").classList.remove("dot_selected"); // on supprime la class "dot_selected"
+	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
+}
 
-// Etape 2 : Ajout event listener fleche droite
+
+// Etape 2 : Ajout d'un event listener fleche droite
 
 const arrowRight = document.querySelector(".arrow_right");
 
 arrowRight.addEventListener("click", next);
 
 function next() {
-	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides[compteur +1].image;
-	document.querySelector(".banner-desc").innerHTML=slides[compteur + 1].tagLine;
-	// document.querySelector(".dot_selected")=slides[compteur].bullet;
+	compteur=compteur+1; // Etape 4 : incrémentation du compteur de +1 pour chaque clic
+
+	if (compteur>=4){ // Etape 5 : condition qui permet le défilement infini
+		compteur=0;
 	}
+
+	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides[compteur].image;
+	document.querySelector(".banner-desc").innerHTML=slides[compteur].tagLine;
+	document.querySelector(".dot_selected").classList.remove("dot_selected"); // on supprime la class "dot_selected"
+	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
+}
 
 // Etape 3 : Boucle pour compter le nombre d'element du tableau slides
 
@@ -54,10 +69,3 @@ function next() {
 // for (var i = 0; i < slides.length; i++) {
 //   console.log(slides[i].image);
 // }
-
-// Etape 4 : Modifier le slide au clic sur le bouton
-
-
-
-
-// Etape 5 : Mettre en place le défilement infini
