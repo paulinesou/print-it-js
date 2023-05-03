@@ -39,8 +39,8 @@ function prev() {
 
 	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides[compteur].image; // permet de changer l'image
 	document.querySelector(".banner-desc").innerHTML=slides[compteur].tagLine; // permet de changer le texte 
-	document.querySelector(".dot_selected").classList.remove("dot_selected"); // on supprime la class "dot_selected"
-	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
+	document.querySelector(".dot_selected").classList.remove("dot_selected"); // (étape 3) on supprime la class "dot_selected"
+	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // (étape 3) on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
 }
 
 
@@ -59,13 +59,6 @@ function next() {
 
 	document.querySelector(".banner-img").src="./assets/images/slideshow/"+slides[compteur].image;
 	document.querySelector(".banner-desc").innerHTML=slides[compteur].tagLine;
-	document.querySelector(".dot_selected").classList.remove("dot_selected"); // on supprime la class "dot_selected"
-	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
+	document.querySelector(".dot_selected").classList.remove("dot_selected"); // (étape 3) on supprime la class "dot_selected"
+	document.querySelector('.dot_'+slides[compteur].bullet).classList.add("dot_selected") // (étape 3) on selectionne la class "dot_" pour l'affecter à l'image qui s'affiche avec "dot_selected"
 }
-
-// Etape 3 : Boucle pour compter le nombre d'element du tableau slides
-
-// slides[0, 1, 2, 3];
-// for (var i = 0; i < slides.length; i++) {
-//   console.log(slides[i].image);
-// }
