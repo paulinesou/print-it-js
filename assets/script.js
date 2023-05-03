@@ -20,11 +20,11 @@ const slides = [
 		"bullet": 4
 	}
 ]
-// Etape 1 création variable compteur
+// Création variable compteur
 
 let compteur = 0;
 
-// Etape 2 : Ajout d'un event listener fleche gauche
+// Etape 2 : Ajout d'un event listener flèche gauche
 
 const arrowLeft = document.querySelector(".arrow_left");
 
